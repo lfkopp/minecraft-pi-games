@@ -1,7 +1,6 @@
 from mcpi.minecraft import Minecraft
 from time import sleep
 
-# from https://projects.raspberrypi.org/en/projects/getting-started-with-minecraft-pi/8
 mc = Minecraft.create()
 
 x, y, z = mc.player.getPos()
