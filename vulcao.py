@@ -2,7 +2,6 @@ from mcpi.minecraft import Minecraft
 from time import sleep
 
 mc = Minecraft.create()
-
 x, y, z = mc.player.getPos()
 
 lava = 10

@@ -12,6 +12,7 @@ pixels = im.load()
 for i in range(im.size[0]):
     for j in range(im.size[1]):
         pixel = pixels[i,j]
+		mc.postToChat(str(pixel))
         if pixel[0] > 100:
             type = block.STONE
         else:
