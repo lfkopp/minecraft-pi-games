@@ -10,22 +10,22 @@ img = Image.open('flu.png')
 baseheight = 40
 hpercent = (baseheight / float(img.size[1]))
 wsize = int((float(img.size[0]) * float(hpercent)))
-img = img.resize((wsize, baseheight), PIL.Image.ANTIALIAS)
+img = img.resize((wsize, baseheight), Image.ANTIALIAS)
 img.save('resized_img.bmp')
 img = Image.open('resized_img.bmp')
 pixels = img.load()
 
 
-for i in range(im.size[0]):
-    print(" ")
-    for j in range(im.size[1]):
+for i in range(img.size[0]):
+    for j in range(img.size[1]):
         pixel = pixels[i,j]
-        print(pixel,",",end="")
-        if pixel > 14:
-            type = block.STONE
+        if pixel == 15:
+            type = 155
+        elif pixel == 11:
+            type = 18
         elif pixel == 1:
-            type = block.AIR
+            type = 45
         else:
-            type = block.GLASS
-        mc.setBlock(player_pos.x + 20 , player_pos.y +im.size[1]/2 - j, player_pos.z + i, type)        
+            type = block.AIR
+        mc.setBlock(player_pos.x + 5 , player_pos.y + img.size[1]- j, player_pos.z + i, type)        
 
