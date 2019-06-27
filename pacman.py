@@ -1,5 +1,5 @@
-import minecraft
-import block
+import mcpi.minecraft as minecraft
+import mcpi.block as block
 import time
 import random
 
@@ -30,268 +30,268 @@ def bigdot(a, b, d):
 mc.postToChat("Pac-Man")
 time.sleep(1.5)
 
-for x in xrange(15, 64):
-    for y in xrange(4, 9):
-        for z in xrange(-1, 65):
+for x in range(15, 64):
+    for y in range(4, 9):
+        for z in range(-1, 65):
             if(x==15 or x==63 or y==4 or y==9 or z==-1 or z==64):    
                 mc.setBlock(x, y, z, block.OBSIDIAN)
 #Creates the doorway and stairs
-for x in xrange(39, 41):
-    for y in xrange(5, 8):
+for x in range(39, 41):
+    for y in range(5, 8):
         mc.setBlock(x, y, -1, block.AIR)
-for x in xrange(38, 42):
-    for y in xrange(4, 5):
-        for z in xrange(-2, -1):
+for x in range(38, 42):
+    for y in range(4, 5):
+        for z in range(-2, -1):
             mc.setBlock(x, y, z, block.STONE_SLAB)
 #Tells the player what's happening
 mc.postToChat("Building Obstacles")
 #Creates the blocks in the first row of the course
-for x in xrange(44, 60):
-    for y in xrange(5, 8):
-        for z in xrange(3, 5):
+for x in range(44, 60):
+    for y in range(5, 8):
+        for z in range(3, 5):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(48, 50):
-    for y in xrange(5, 8):
-        for z in xrange(5, 11):
+for x in range(48, 50):
+    for y in range(5, 8):
+        for z in range(5, 11):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(19, 35):
-    for y in xrange(5, 8):
-        for z in xrange(3, 5):
+for x in range(19, 35):
+    for y in range(5, 8):
+        for z in range(3, 5):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(31, 33):
-    for y in xrange(5, 8):
-        for z in xrange(3, 5):
+for x in range(31, 33):
+    for y in range(5, 8):
+        for z in range(3, 5):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(39, 41):
-    for y in xrange(5, 8):
-        for z in xrange(3, 10):
+for x in range(39, 41):
+    for y in range(5, 8):
+        for z in range(3, 10):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(35, 45):
-    for y in xrange(5, 8):
-        for z in xrange(9, 11):
+for x in range(35, 45):
+    for y in range(5, 8):
+        for z in range(9, 11):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(29, 31):
-    for y in xrange(5, 8):
-        for z in xrange(5, 11):
+for x in range(29, 31):
+    for y in range(5, 8):
+        for z in range(5, 11):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 #Creates second row
-for x in xrange(58, 63):
-    for y in xrange(5, 8):
-        for z in xrange(8, 10):
+for x in range(58, 63):
+    for y in range(5, 8):
+        for z in range(8, 10):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(16, 21):
-    for y in xrange(5, 8):
-        for z in xrange(8, 10):
+for x in range(16, 21):
+    for y in range(5, 8):
+        for z in range(8, 10):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(24, 26):
-    for y in xrange(5, 8):
-        for z in xrange(8, 15):
+for x in range(24, 26):
+    for y in range(5, 8):
+        for z in range(8, 15):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(19, 26):
-    for y in xrange(5, 8):
-        for z in xrange(13, 15):
+for x in range(19, 26):
+    for y in range(5, 8):
+        for z in range(13, 15):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(53, 55):
-    for y in xrange(5, 8):
-        for z in xrange(8, 15):
+for x in range(53, 55):
+    for y in range(5, 8):
+        for z in range(8, 15):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(54, 60):
-    for y in xrange(5, 8):
-        for z in xrange(13, 15):
+for x in range(54, 60):
+    for y in range(5, 8):
+        for z in range(13, 15):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 #Creates third row
-for x in xrange(44, 50):
-    for y in xrange(5, 8):
-        for z in xrange(14, 16):
+for x in range(44, 50):
+    for y in range(5, 8):
+        for z in range(14, 16):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(36, 30):
-    for y in xrange(5, 8):
-        for z in xrange(14, 16):
+for x in range(36, 30):
+    for y in range(5, 8):
+        for z in range(14, 16):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(39, 41):
-    for y in xrange(5, 8):
-        for z in xrange(14, 19):
+for x in range(39, 41):
+    for y in range(5, 8):
+        for z in range(14, 19):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(35, 45):
-    for y in xrange(5, 8):
-        for z in xrange(19, 21):
+for x in range(35, 45):
+    for y in range(5, 8):
+        for z in range(19, 21):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(29, 36):
-    for y in xrange(5, 8):
-        for z in xrange(14, 16):
+for x in range(29, 36):
+    for y in range(5, 8):
+        for z in range(14, 16):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 #Creates fourth row
-for x in xrange(53, 63):
-    for y in xrange(5, 8):
-        for z in xrange(19, 21):
+for x in range(53, 63):
+    for y in range(5, 8):
+        for z in range(19, 21):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(53, 55):
-    for y in xrange(5, 8):
-        for z in xrange(21, 34):
+for x in range(53, 55):
+    for y in range(5, 8):
+        for z in range(21, 34):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(55, 63):
-    for y in xrange(5, 8):
-        for z in xrange(32, 34):
+for x in range(55, 63):
+    for y in range(5, 8):
+        for z in range(32, 34):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(48, 50):
-    for y in xrange(5, 8):
-        for z in xrange(19, 29):
+for x in range(48, 50):
+    for y in range(5, 8):
+        for z in range(19, 29):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(30, 32):
-    for y in xrange(5, 8):
-        for z in xrange(19, 29):
+for x in range(30, 32):
+    for y in range(5, 8):
+        for z in range(19, 29):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(16, 27):
-    for y in xrange(5, 8):
-        for z in xrange(19, 21):
+for x in range(16, 27):
+    for y in range(5, 8):
+        for z in range(19, 21):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(25, 27):
-    for y in xrange(5, 8):
-        for z in xrange(21, 34):
+for x in range(25, 27):
+    for y in range(5, 8):
+        for z in range(21, 34):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(16, 25):
-    for y in xrange(5, 8):
-        for z in xrange(32, 34):
+for x in range(16, 25):
+    for y in range(5, 8):
+        for z in range(32, 34):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 #Creates the ghost box           
-for x in xrange(35, 45):
-    for y in xrange(5, 8):
-        for z in xrange(27, 35):
+for x in range(35, 45):
+    for y in range(5, 8):
+        for z in range(27, 35):
             if (x==35 or x==44 or y==4 or y==8 or z==27 or z==34):
                 mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(39, 41):
-    for y in xrange(4, 8):
-        for z in xrange(34, 35):
+for x in range(39, 41):
+    for y in range(4, 8):
+        for z in range(34, 35):
             mc.setBlock(x, y, z, block.AIR)
 
-for x in xrange(39, 41):
-    for y in xrange(4, 5):
-        for z in xrange(34, 35):
+for x in range(39, 41):
+    for y in range(4, 5):
+        for z in range(34, 35):
             mc.setBlock(x, y, z, block.WOOL)
             
 #Creates the fourth row
-for x in xrange(53, 63):
-    for y in xrange(5, 8):
-        for z in xrange(37, 39):
+for x in range(53, 63):
+    for y in range(5, 8):
+        for z in range(37, 39):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(53, 55):
-    for y in xrange(5, 8):
-        for z in xrange(39, 49):
+for x in range(53, 55):
+    for y in range(5, 8):
+        for z in range(39, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(55, 63):
-    for y in xrange(5, 8):
-        for z in xrange(47, 49):
+for x in range(55, 63):
+    for y in range(5, 8):
+        for z in range(47, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(16, 27):
-    for y in xrange(5, 8):
-        for z in xrange(37, 39):
+for x in range(16, 27):
+    for y in range(5, 8):
+        for z in range(37, 39):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(25, 27):
-    for y in xrange(5, 8):
-        for z in xrange(38, 49):
+for x in range(25, 27):
+    for y in range(5, 8):
+        for z in range(38, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(16, 25):
-    for y in xrange(5, 8):
-        for z in xrange(47, 49):
+for x in range(16, 25):
+    for y in range(5, 8):
+        for z in range(47, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(30, 32):
-    for y in xrange(5, 8):
-        for z in xrange(32, 49):
+for x in range(30, 32):
+    for y in range(5, 8):
+        for z in range(32, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(32, 36):
-    for y in xrange(5, 8):
-        for z in xrange(38, 40):
+for x in range(32, 36):
+    for y in range(5, 8):
+        for z in range(38, 40):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(48, 50):
-    for y in xrange(5, 8):
-        for z in xrange(32, 49):
+for x in range(48, 50):
+    for y in range(5, 8):
+        for z in range(32, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(44, 48):
-    for y in xrange(5, 8):
-        for z in xrange(38, 40):
+for x in range(44, 48):
+    for y in range(5, 8):
+        for z in range(38, 40):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 #Creates fifth row
-for x in xrange(39, 41):
-    for y in xrange(5, 8):
-        for z in xrange(40, 47):
+for x in range(39, 41):
+    for y in range(5, 8):
+        for z in range(40, 47):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(35, 45):
-    for y in xrange(5, 8):
-        for z in xrange(47, 49):
+for x in range(35, 45):
+    for y in range(5, 8):
+        for z in range(47, 49):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(53, 60):
-    for y in xrange(5, 8):
-        for z in xrange(52, 54):
+for x in range(53, 60):
+    for y in range(5, 8):
+        for z in range(52, 54):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(17, 25):
-    for y in xrange(5, 8):
-        for z in xrange(54, 52):
+for x in range(17, 25):
+    for y in range(5, 8):
+        for z in range(54, 52):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(38, 40):
-    for y in xrange(5, 8):
-        for z in xrange(54, 64):
+for x in range(38, 40):
+    for y in range(5, 8):
+        for z in range(54, 64):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(53, 60):
-    for y in xrange(5, 8):
-        for z in xrange(57, 61):
+for x in range(53, 60):
+    for y in range(5, 8):
+        for z in range(57, 61):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
 
-for x in xrange(43,  50):
-    for y in xrange(5, 8):
-        for z in xrange(54, 61):
+for x in range(43,  50):
+    for y in range(5, 8):
+        for z in range(54, 61):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(19, 25):
-    for y in xrange(5, 8):
-        for z in xrange(57, 61):
+for x in range(19, 25):
+    for y in range(5, 8):
+        for z in range(57, 61):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(28, 35):
-    for y in xrange(5, 8):
-        for z in xrange(54, 61):
+for x in range(28, 35):
+    for y in range(5, 8):
+        for z in range(54, 61):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
-for x in xrange(19, 25):
-    for y in xrange(5, 8):
-        for z in xrange(52, 54):
+for x in range(19, 25):
+    for y in range(5, 8):
+        for z in range(52, 54):
             mc.setBlock(x, y, z, block.LAPIS_LAZULI_BLOCK)
 
 mc.postToChat("Placing Dots...")
