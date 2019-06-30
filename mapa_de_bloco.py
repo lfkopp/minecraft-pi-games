@@ -11,6 +11,6 @@ while True:
         print(mc.getBlockWithData(hit.pos.x,hit.pos.y,hit.pos.z).id)
         print(mc.getBlockWithData(hit.pos.x,hit.pos.y,hit.pos.z).data)
         print(mc.getBlockWithData(hit.pos.x,hit.pos.y,hit.pos.z).withData.__str__)
-        mc.setBlocks(hit.pos.x-1,hit.pos.y-1,hit.pos.z-1,
-                     hit.pos.x+1,hit.pos.y+1,hit.pos.z+1,0)
+        mc.setBlocks(hit.pos.x-2,hit.pos.y-2,hit.pos.z-2,
+                     hit.pos.x+2,hit.pos.y+2,hit.pos.z+2,0)
         

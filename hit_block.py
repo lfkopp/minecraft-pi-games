@@ -11,7 +11,7 @@ mc.setBlocks(pos.x - 1, pos.y, pos.z + 3,
              pos.x + 1, pos.y + 2, pos.z + 3,
              block.STONE.id)
 
-
+time.sleep(5)
 blocksLit = 0
 points = 0
 
@@ -31,5 +31,5 @@ while blocksLit < 9:
         if mc.getBlock(xPos, yPos, zPos) == block.STONE.id:
             mc.setBlock(xPos, yPos, zPos, block.GLOWSTONE_BLOCK.id)
             lightCreated = True
-            print "light created x{} y{} z{}".format(xPos, yPos, zPos)
+            print("light created x{} y{} z{}".format(xPos, yPos, zPos))
 mc.postToChat("Game Over - points = " + str(points))
