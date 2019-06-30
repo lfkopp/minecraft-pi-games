@@ -168,7 +168,9 @@ mc.player.setPos(randrange(-10,10),10,randrange(-10,10))
 mc.setBlock(bolax, 1, bolaz, bola) #bola
 
 fla,flu = 0,0
-
+pygame.mixer.music.load("wav/comeco.wav")
+pygame.mixer.music.play()
+        
 while True:
     bolax,bolaz = chuta_bola(bolax,bolaz)
     bolax,bolaz,fla,flu = foi_gol(bolax,bolaz,fla,flu)
