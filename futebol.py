@@ -5,11 +5,34 @@ from random import randrange
 mc = Minecraft.create()
 x, y, z = mc.player.getPos()
 
-bola = 41
+
 
 cores = {'white':0,'orange':1,'magenta':2,'cyan':3,'yellow':4,'green':5,
          'pink':6,'dark_gray':7,'light_gray':8,'blue':9,'purple':10,'dark_blue':11,
          'brown':12,'dark_green':13,'red':14,'black':15}
+
+
+def foi_gol(x,z,fla,flu):
+    if (-5 < x < 5) and (z < -31):
+        fla += 1
+        mc.postToChat("ahhhh gol do Flamengo")
+        sleep(3)
+        mc.postToChat(''.join(["Fluminense ",str(flu)," x ", str(fla), " Flamengo"]))
+        mc.player.setPos(randrange(-10,10),10,randrange(-10,10))
+        mc.setBlock(x, 1, z, 0) #limpa bola
+        mc.setBlock(0, 1, 0, 41) #bola
+        return 0,0,fla,flu
+    elif (-5 < x < 5) and (z > 31):
+        flu +=1
+        mc.postToChat("gol do Fluminense")
+        sleep(3)
+        mc.postToChat(''.join(["Fluminense ",str(flu)," x ", str(fla), " Flamengo"]))
+        mc.player.setPos(randrange(-10,10),10,randrange(-10,10))
+        mc.setBlock(x, 1, z, 0) #limpa bola
+        mc.setBlock(0, 1, 0, 41) #bola
+        return 0,0,fla,flu
+    
+    return x,z,fla,flu
 
 def faz_campo():
     mc.setBlocks(-35, -10, -45,    35, 50, 45,0) #limpa espaco
@@ -32,9 +55,9 @@ def faz_campo():
     mc.setBlocks(-6, 1, -32,    6, 5, -34, 20) #faz gol 2 rede
     mc.setBlocks(-5, 1, -31,    5, 4, -33, 0) #faz gol 2
 
-
-    mc.setBlocks(0, 1, 0,    0, 1, 0, bola) #bola
-
+    
+    
+    
 def tem_espaco(x,z):
     if (mc.getBlockWithData(x,1,z).id == 0 and
     mc.getBlockWithData(x,0,z).id != 0):
@@ -42,40 +65,42 @@ def tem_espaco(x,z):
     else:
         return False
 
-def chuta_bola():
+def chuta_bola(x,z):
     hits = mc.events.pollBlockHits()
     for hit in hits:
         print(hit.face, mc.getBlockWithData(hit.pos.x,hit.pos.y,hit.pos.z).id)
         if mc.getBlockWithData(hit.pos.x,hit.pos.y,hit.pos.z).id == bola:
-            if hit.face ==2 and tem_espaco(hit.pos.x,hit.pos.z+1):
-                mc.setBlock(hit.pos.x,1,hit.pos.z,0)
-                mc.setBlock(hit.pos.x,1,hit.pos.z+1,bola)
-            elif hit.face == 3 and tem_espaco(hit.pos.x,hit.pos.z-1):
-                mc.setBlock(hit.pos.x,1,hit.pos.z,0)
-                mc.setBlock(hit.pos.x,1,hit.pos.z-1,bola)
-            elif hit.face == 4 and tem_espaco(hit.pos.x+1,hit.pos.z):
-                mc.setBlock(hit.pos.x,1,hit.pos.z,0)
-                mc.setBlock(hit.pos.x+1,1,hit.pos.z,bola)
-            elif hit.face == 5 and tem_espaco(hit.pos.x-1,hit.pos.z):
-                mc.setBlock(hit.pos.x,1,hit.pos.z,0)
-                mc.setBlock(hit.pos.x-1,1,hit.pos.z,bola)
-            elif hit.face == 1:
+            for t in range(randrange(5,10)):
+                oldx,oldz = hit.pos.x,hit.pos.z
+                if hit.face == 2 and tem_espaco(hit.pos.x,hit.pos.z+1):
+                    hit.pos.z = hit.pos.z +1
+                elif hit.face == 3 and tem_espaco(hit.pos.x,hit.pos.z-1):
+                    hit.pos.z = hit.pos.z-1
+                elif hit.face == 4 and tem_espaco(hit.pos.x+1,hit.pos.z):
+                    hit.pos.x = hit.pos.x+1
+                elif hit.face == 5 and tem_espaco(hit.pos.x-1,hit.pos.z):
+                    hit.pos.x = hit.pos.x-1
+                mc.setBlock(oldx,1,oldz,0)
+                mc.setBlock(hit.pos.x,1,hit.pos.z,bola)
+                x,z=hit.pos.x,hit.pos.z
+            if hit.face == 1:
                 mc.setBlock(hit.pos.x,1,hit.pos.z,0)
                 mc.setBlock(hit.pos.x,2,hit.pos.z,bola)
                 sleep(0.2)
                 mc.setBlock(hit.pos.x,2,hit.pos.z,0)
                 mc.setBlock(hit.pos.x,1,hit.pos.z,bola)
+    return x,z
 
 def cria_jogador(a,c1,c2,pos):
-    x,y = pos
-    mc.setBlock(x,1,y,a,c1)
-    mc.setBlock(x,2,y,a,c2)
-    #mc.setBlock(x,3,y,44)
+    x,z = pos
+    mc.setBlock(x,1,z,a,c1)
+    mc.setBlock(x,2,z,a,c2)
+    #mc.setBlock(x,3,z,44)
 
 def monta_time():
     time1 = []
     time2 = []
-    for i in range(3):
+    for i in range(30):
         pos = tuple([randrange(-19,19),randrange(1,29)])
         time1.append(pos)
         cria_jogador(35,cores['red'],cores['black'],pos)
@@ -84,6 +109,12 @@ def monta_time():
         cria_jogador(35,cores['dark_green'],cores['red'],pos)
     return time1,time2
 
+def monta_goleiro(pos,lado,cor):
+    mc.setBlock(pos, 1, lado, 35,cores[cor])
+    mc.setBlock(pos, 2, lado, 35,cores[cor])
+    mc.setBlock(pos, 3, lado, 35,cores[cor])
+    return pos
+    
 def move(time,c1,c2):
     novo_time = []
     for i in time:
@@ -95,16 +126,31 @@ def move(time,c1,c2):
         novo_time.append(i)
     return novo_time
 
+def move_goleiro(pos,lado,cor):
+    new_pos = pos+randrange(-1,2)
+    if tem_espaco(new_pos,lado):
+        mc.setBlocks(pos, 1, lado, pos, 3, lado, 0)
+        monta_goleiro(new_pos,lado,cor)
+        return new_pos
+    else:
+        return pos
 
 faz_campo()
-   
+bolax, bolaz, bola = 0,0,41
+mc.postToChat("Pedro, vamos jogar futebol?")
 time1 , time2 = monta_time()
-
-print(time1)
-print(time2)
+gol1 = monta_goleiro(randrange(-5,5),31,'yellow')
+gol2 = monta_goleiro(randrange(-5,5),-31,'orange')
 mc.player.setPos(randrange(-10,10),10,randrange(-10,10))
+mc.setBlock(bolax, 1, bolaz, bola) #bola
+
+fla,flu = 0,0
 
 while True:
-    chuta_bola()
-    time1 = move(time1,cores['red'],cores['black'])
-    time2 = move(time2,cores['dark_green'],cores['red'])
+    bolax,bolaz = chuta_bola(bolax,bolaz)
+    bolax,bolaz,fla,flu = foi_gol(bolax,bolaz,fla,flu)
+    gol1 = move_goleiro(gol1,31,'yellow')
+    gol2 = move_goleiro(gol2,-31,'orange')
+    #time1 = move(time1,cores['red'],cores['black'])
+    #time2 = move(time2,cores['dark_green'],cores['red'])
+    
